@@ -68,7 +68,7 @@ function update(){
     if(snakeX ==foodX&&snakeY==foodY){
         snakeBody.push([foodX,foodY])
         score+=1
-        snakeSpeed=snakeSpeed+0.1
+        snakeSpeed=snakeSpeed*2
         placeFood();
     }
    
