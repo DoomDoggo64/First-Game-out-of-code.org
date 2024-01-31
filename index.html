@@ -29,7 +29,8 @@ var snakeSpeed=1;
 var foodX;
 var foodY;
 
-var score=0
+var score=0;
+    var speedcounter=0;
 
 
 var gameOver= false;
@@ -68,8 +69,11 @@ function update(){
     if(snakeX ==foodX&&snakeY==foodY){
         snakeBody.push([foodX,foodY])
         score+=1
-        snakeSpeed=snakeSpeed+0.1
-        placeFood();
+        if(speedcounter>score+3){
+        snakeSpeed=snakeSpeed+1
+            speedcounter=score
+        }
+            placeFood();
     }
    
    for(let i =snakeBody.length-1; i>0; i--){
